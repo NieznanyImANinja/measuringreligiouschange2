@@ -1,5 +1,5 @@
 #' @include class_migration.R
-
+NULL
 
 Country_object$methods(
 

@@ -1,4 +1,5 @@
 #' @include projection_class_base.R
+NULL
 
 projection_object$methods(
   list(

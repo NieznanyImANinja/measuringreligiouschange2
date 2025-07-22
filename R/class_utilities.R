@@ -1,4 +1,5 @@
 #' @include class_base.R
+NULL
 
 Country_object$methods(
 

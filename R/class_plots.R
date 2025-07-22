@@ -1,5 +1,5 @@
 #' @include class_projection.R
-
+NULL
 
 Country_object$methods(
 
