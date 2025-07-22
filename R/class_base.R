@@ -8,7 +8,6 @@ for (sex in c("males", "females")) {
   }
 }
 
-#' @exportClass Country_object
 Country_object <- setRefClass("Country",
   fields = list(
     #Information fields

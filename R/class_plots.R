@@ -1,5 +1,4 @@
 #' @include class_projection.R
-#' @exportClass Country_object
 Country_object$methods(
 
   plot = function(variant, period = 0, post_switch, switching_religion = 0,

@@ -1,7 +1,3 @@
-## usethis namespace: start
-## usethis namespace: end
-
-#' @import readxl tidyverse progress logr
 
 #old distribution list for testing
 #dist_list <- list(c(2, 3, 4), c(2, 3, 4, 5), c(2, 3, 4), c(3, 4, 5, 6),

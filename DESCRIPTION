@@ -14,7 +14,7 @@ Description: More about what it does (maybe more than one line).
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-Depends:
+Imports:
     tidyverse,
     logr,
     openxlsx,
@@ -32,6 +32,7 @@ Collate:
     'projection_class_plots.R'
     'Loader.R'
     'Variants.R'
+    'measuringreligiouschange2-package.R'
 URL: https://github.com/NieznanyImANinja/measuringreligiouschange2
 BugReports: https://github.com/NieznanyImANinja/measuringreligiouschange2/issues
 Suggests: 

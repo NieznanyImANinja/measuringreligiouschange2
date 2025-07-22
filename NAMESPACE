@@ -2,8 +2,6 @@
 
 export(full_list)
 export(variants_loader)
-exportClasses(Country_object)
-exportClasses(projection_object)
 import(logr)
 import(progress)
 import(readxl)
