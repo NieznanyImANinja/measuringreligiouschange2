@@ -1,6 +1,6 @@
 #' @include class_plots.R
 
-
+import(progress)
 
 sex_vector <- c(rep("males", 20), rep("females", 20))
 sex_vector_mortality <- c(rep("males", 21), rep("females", 21))

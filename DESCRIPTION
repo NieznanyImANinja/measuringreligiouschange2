@@ -34,3 +34,6 @@ Collate:
     'Variants.R'
 URL: https://github.com/NieznanyImANinja/measuringreligiouschange2
 BugReports: https://github.com/NieznanyImANinja/measuringreligiouschange2/issues
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
