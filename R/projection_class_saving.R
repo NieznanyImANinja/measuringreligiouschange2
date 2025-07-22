@@ -380,7 +380,15 @@ projection_object$methods(
       log_print("Data saved", console = FALSE)
     },
 
-    save_csv_all = function(filenames_vector, folder, switching = FALSE, migration = FALSE) {
+    save_csv_all = function(filenames_vector = c("projection_structure_data.csv",
+                                                 "projection_fertility_data.csv",
+                                                 "projection_mortality_data.csv",
+                                                 "projection_asfr.csv",
+                                                 "projection_fertile_women_population.csv",
+                                                 "projection_fertility_differentials.csv",
+                                                 "projection_switching_matrices.csv",
+                                                 "projection_switching_data.csv",
+                                                 "projection_migration_data.csv"), folder = "projections", switching = switching, migration = migration) {
       save_csv_structure(filenames_vector[1], folder)
       save_csv_fertility(filenames_vector[2], folder)
       save_csv_mortality(filenames_vector[3], folder)

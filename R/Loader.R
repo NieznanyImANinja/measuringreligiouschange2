@@ -369,5 +369,11 @@ create_projection_object = function(country_object_list = create_country_list(),
     switching_type = switching_type,
     no_diff = no_diff
   )
+
+  logr::log_print("Global starting parameters:", blank_after = T, hide_notes = T)
+  logr::log_print(paste("Migration:", as.character(migration), sep=" "), blank_after = T, hide_notes = T)
+  logr::log_print(paste("Steps:", as.character(steps), sep=" "), blank_after = T, hide_notes = T)
+  logr::log_print(paste("dataset:", as.character(dataset), sep=" "), hide_notes = T)
+
   return(full_projection_object)
 }
