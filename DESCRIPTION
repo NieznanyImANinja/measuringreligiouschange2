@@ -32,3 +32,5 @@ Collate:
     'projection_class_plots.R'
     'Loader.R'
     'Variants.R'
+URL: https://github.com/NieznanyImANinja/measuringreligiouschange2
+BugReports: https://github.com/NieznanyImANinja/measuringreligiouschange2/issues
