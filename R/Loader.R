@@ -4,7 +4,7 @@
 
 dist_list <- list(c(0.2,0.1,0.1,0.1,0.1,0.1,0.1,0.2), c(0.2,0.1,0.1,0.1,0.1,0.1,0.1,0.2))
 
-directory <- "INPUT_TEST"
+directory <- "data-raw/INPUT_TEST"
 
 country_info_name <- "country_codes_fix.xlsx"
 structure_data_name <- "structure_data_fix.xlsx"
@@ -326,17 +326,19 @@ object_list_creator <- function(start_year = 2010,
 }
 
 
-#' @export full_list
-full_list <- function(start_year = 2010,
-                      start_period = "2010-2015",
+#' @export create_country_list
+create_country_list <- function(start_year = 2010,
                       start_fertility_group = 4,
                       post_switch = TRUE,
                       distribution_list = dist_list,
                       directory_name = directory,
-                      files_names= files) {
+                      files_names = files) {
   data_list <- data_loader(directory, files)
-  country_object_list <- object_list_creator(start_year,
-                                             start_period,
+  full_country_list <- object_list_creator(start_year,
+                                             paste(
+                                               as.character(start_year),
+                                               as.character(start_year+5),
+                                               sep="-"),
                                              start_fertility_group,
                                              post_switch,
                                              distribution_list,
@@ -349,5 +351,22 @@ full_list <- function(start_year = 2010,
                                              data_list[[7]],
                                              data_list[[8]],
                                              data_list[[9]])
-  return(country_object_list)
+  return(full_country_list)
+}
+
+create_projection_object = function(country_object_list = create_country_list(),
+                                    steps = 10,
+                                    migration = TRUE,
+                                    switching = TRUE,
+                                    switching_type = 1,
+                                    no_diff = TRUE) {
+  full_projection_object <- projection_object$new(
+    country_object_list = country_object_list,
+    steps = steps,
+    migration = migration,
+    switching = switching,
+    switching_type = switching_type,
+    no_diff = no_diff
+  )
+  return(full_projection_object)
 }

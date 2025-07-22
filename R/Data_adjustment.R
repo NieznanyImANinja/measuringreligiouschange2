@@ -86,7 +86,7 @@ switch_prob_adjustment <- function(retention_data) {
 
 sorting <- function(retention_data) {
   retention_data <- retention_data %>%
-    arrange(retention_data$Religion, retention_data$Sex, retention_data$Age)
+    dplyr::arrange(retention_data$Religion, retention_data$Sex, retention_data$Age)
 }
 
 
@@ -315,7 +315,7 @@ survivability_adjustment_country <- function(mortality_full_data, code = "blank"
   if (code != "blank") {
     mortality_full_data <- mortality_full_data[mortality_full_data[[1]] == code, ]
   }
-  mortality_full_data <- mortality_full_data %>% arrange(mortality_full_data[[3]])
+  mortality_full_data <- mortality_full_data %>% dplyr::arrange(mortality_full_data[[3]])
   colnames <- c("Country Code", "Sex", unique(mortality_full_data[[3]]))
   data_frame_mortality <- data.frame(matrix(data = 0, nrow = 0, ncol = 16))
   timeslist <- unique(mortality_full_data[[3]])

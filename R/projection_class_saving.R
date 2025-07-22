@@ -47,7 +47,7 @@ projection_object$methods(
       log_print("Saving structure data to csv", console = FALSE)
       matrices <- length(country_object_list) * length(country_object_list[[1]]$structure_data)
       csv_list <- save_csv_startup(folder)
-      pb <- progress_bar$new(
+      pb <- progress::progress_bar$new(
         format = paste(
           "Saving structure data to .csv [:bar] :percent Estimated time left: :eta Total matrices: ",
           as.character(matrices),
@@ -83,7 +83,7 @@ projection_object$methods(
       log_print("Saving fertility data to csv", console = FALSE)
       matrices <- length(country_object_list) * length(country_object_list[[1]]$previous_fertility) * length(country_object_list[[1]]$previous_fertility[[1]])
       csv_list <- save_csv_startup(folder)
-      pb <- progress_bar$new(
+      pb <- progress::progress_bar$new(
         format = paste(
           "Saving fertility data to .csv [:bar] :percent Estimated time left: :eta Total matrices: ",
           as.character(matrices),
@@ -122,7 +122,7 @@ projection_object$methods(
       log_print("Saving mortality data to csv", console = FALSE)
       matrices <- length(country_object_list) * length(country_object_list[[1]]$previous_mortality) * length(country_object_list[[1]]$previous_mortality[[1]])
       csv_list <- save_csv_startup(folder)
-      pb <- progress_bar$new(
+      pb <- progress::progress_bar$new(
         format = paste(
           "Saving mortality data to .csv [:bar] :percent Estimated time left: :eta Total matrices: ",
           as.character(matrices),
@@ -161,7 +161,7 @@ projection_object$methods(
       log_print("Saving ASFR data to csv", console = FALSE)
       matrices <- length(country_object_list) * length(country_object_list[[1]]$previous_asfr) * length(country_object_list[[1]]$previous_asfr[[1]])
       csv_list <- save_csv_startup(folder)
-      pb <- progress_bar$new(
+      pb <- progress::progress_bar$new(
         format = paste(
           "Saving ASFR data to .csv [:bar] :percent Estimated time left: :eta Total matrices: ",
           as.character(matrices),
@@ -200,7 +200,7 @@ projection_object$methods(
       log_print("Saving fertile women population data to csv", console = FALSE)
       matrices <- length(country_object_list) * length(country_object_list[[1]]$previous_women_population) * length(country_object_list[[1]]$previous_women_population[[1]])
       csv_list <- save_csv_startup(folder)
-      pb <- progress_bar$new(
+      pb <- progress::progress_bar$new(
         format = paste(
           "Saving women population data to .csv [:bar] :percent Estimated time left: :eta Total matrices:",
           as.character(matrices),
@@ -239,7 +239,7 @@ projection_object$methods(
       log_print("Saving fertility differentials to csv", console = FALSE)
       matrices <- length(country_object_list) * length(country_object_list[[1]]$fertility_differentials)
       csv_list <- save_csv_startup(folder)
-      pb <- progress_bar$new(
+      pb <- progress::progress_bar$new(
         format = paste(
           "Saving fertility differentials to .csv [:bar] :percent Estimated time left: :eta Total matrices: ",
           as.character(matrices),
@@ -275,7 +275,7 @@ projection_object$methods(
       log_print("Saving switching matrices to csv", console = FALSE)
       matrices <- length(country_object_list) * length(country_object_list[[1]]$switching_matrices_list)
       csv_list <- save_csv_startup(folder)
-      pb <- progress_bar$new(
+      pb <- progress::progress_bar$new(
         format = paste(
           "Saving switching matrices to .csv [:bar] :percent Estimated time left: :eta Total matrices: ",
           as.character(matrices),
@@ -311,7 +311,7 @@ projection_object$methods(
       log_print("Saving switching data to csv", console = FALSE)
       matrices <- length(country_object_list) * length(country_object_list[[1]]$previous_switching) * length(country_object_list[[1]]$previous_switching[[1]]) * length(country_object_list[[1]]$previous_switching[[1]][[1]])
       csv_list <- save_csv_startup(folder)
-      pb <- progress_bar$new(
+      pb <- progress::progress_bar$new(
         format = paste(
           "Saving switching data to .csv [:bar] :percent Estimated time left: :eta Total matrices: ",
           as.character(matrices),
@@ -346,7 +346,7 @@ projection_object$methods(
       log_print("Saving migration data to csv", console = FALSE)
       matrices <- length(country_object_list) * length(country_object_list[[1]]$previous_migration) * length(country_object_list[[1]]$previous_migration[[1]]) * length(country_object_list[[1]]$previous_migration[[1]][[1]])
       csv_list <- save_csv_startup(folder)
-      pb <- progress_bar$new(
+      pb <- progress::progress_bar$new(
         format = paste(
           "Saving migration data to .csv [:bar] :percent Estimated time left: :eta Total matrices: ",
           as.character(matrices),

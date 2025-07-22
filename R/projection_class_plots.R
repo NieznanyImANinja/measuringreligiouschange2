@@ -173,7 +173,7 @@ projection_object$methods(
       output_dir <- "PlotsVer2_pdf"
       if (!dir.exists(output_dir)) dir.create(output_dir)
 
-      pb <- progress_bar$new(
+      pb <- progress::progress_bar$new(
         format = "Saving plots [:bar] :percent ETA: :eta",
         total = length(country_object_list), clear = FALSE, width = 100
       )

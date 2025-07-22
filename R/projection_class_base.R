@@ -23,7 +23,11 @@ projection_object <- setRefClass(
 projection_object$methods(
   list(
 
-  project = function(migration = TRUE, steps = 1, switching = TRUE, switching_type = 1, no_diff = FALSE) {
+  project = function(migration = migration,
+                     steps = steps,
+                     switching = switching,
+                     switching_type = switching_type,
+                     no_diff = no_diff) {
     # Progress bar for calculations
     if(!require("progress")){
       stop(stop(
