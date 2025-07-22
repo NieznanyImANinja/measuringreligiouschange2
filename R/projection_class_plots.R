@@ -1,6 +1,6 @@
 #' @include projection_class_saving.R
-NULL
 
+#' @exportClass projection_object
 projection_object$methods(
   list(
 

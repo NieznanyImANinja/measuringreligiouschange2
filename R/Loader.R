@@ -1,5 +1,5 @@
 #' @include Data_adjustment.R projection_class_plots.R
-NULL
+
 #Options
 
 dist_list <- list(c(0.2,0.1,0.1,0.1,0.1,0.1,0.1,0.2), c(0.2,0.1,0.1,0.1,0.1,0.1,0.1,0.2))

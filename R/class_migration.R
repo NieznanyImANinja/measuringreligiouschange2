@@ -1,5 +1,5 @@
 #' @include class_utilities.R
-NULL
+#' @exportClass Country_object
 Country_object$methods(
 
   separate_migrants = function() {

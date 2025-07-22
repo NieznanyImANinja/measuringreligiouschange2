@@ -1,6 +1,6 @@
 #' @include class_base.R
-NULL
 
+#' @exportClass Country_object
 Country_object$methods(
 
   update_period = function() {

@@ -1,5 +1,5 @@
 #' @include class_plots.R
-NULL
+
 
 
 sex_vector <- c(rep("males", 20), rep("females", 20))

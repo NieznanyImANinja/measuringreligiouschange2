@@ -1,6 +1,6 @@
 #' @include class_migration.R
-NULL
 
+#' @exportClass Country_object
 Country_object$methods(
 
   dem_proj_no_mig = function(switching = T, switching_type = 1, no_diff = F) {

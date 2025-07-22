@@ -1,5 +1,5 @@
 #' @include Loader.R
-NULL
+
 
 cap_adjust <- function (vector, bottom_cap, upper_cap, in_thousands) {
   if (is.numeric(bottom_cap)){
