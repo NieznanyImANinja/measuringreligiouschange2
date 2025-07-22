@@ -1,4 +1,4 @@
-#' @import readxl tidyverse progress logr
+#' @import readxl magrittr dplyr progress logr
 NULL
 
 ## usethis namespace: start

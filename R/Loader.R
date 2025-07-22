@@ -354,6 +354,7 @@ create_country_list <- function(start_year = 2010,
   return(full_country_list)
 }
 
+#' @export create_projection_object
 create_projection_object = function(country_object_list = create_country_list(),
                                     steps = 10,
                                     migration = TRUE,
