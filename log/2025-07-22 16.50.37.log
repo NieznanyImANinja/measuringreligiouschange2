@@ -1,0 +1,148 @@
+=========================================================================
+Log Path: ./log/2025-07-22 16.50.37.log
+Program Path: D:/Nextcloud/MRC2_Estimates/Templates and
+code/package/measuringreligiouschange2/R/projection_class_base.R
+Working Directory: D:/Nextcloud/MRC2_Estimates/Templates and
+code/package/measuringreligiouschange2
+User Name: micha
+R Version: 4.2.3 (2023-03-15 ucrt)
+Machine: LAPTOP-MICHAL x86-64
+Operating System: Windows 10 x64 build 22631
+Base Packages: stats graphics grDevices utils datasets methods base
+NULL
+Log Start Time: 2025-07-22 16:50:37
+=========================================================================
+
+Błąd w poleceniu 'load_all()': [1mCaused by error in `log_warning()`:[22m
+[33m![39m nie udało się znaleźć funkcji 'log_warning'
+Traceback:
+32: stop(fallback)
+31: signal_abort(cnd, .file)
+30: rlang::abort(message, ..., call = call, use_cli_format = TRUE, 
+        .frame = .frame)
+29: cli::cli_abort(msg, parent = cnd, call = quote(load_all()))
+28: handle_source_error(cnd, file)
+27: handlers[[1L]](cnd)
+26: h(simpleError(msg, call))
+25: .handleSimpleError(function (cnd) 
+    {
+        {
+            .__handler_frame__. <- TRUE
+            .__setup_frame__. <- frame
+            if (inherits(cnd, "message")) {
+                except <- c("warning", "error")
+            }
+            else if (inherits(cnd, "warning")) {
+                except <- "error"
+            }
+            else {
+                except <- ""
+            }
+        }
+        while (!is_null(cnd)) {
+            if (inherits(cnd, "error")) {
+                out <- handlers[[1L]](cnd)
+                if (!inherits(out, "rlang_zap")) 
+                    throw(out)
+      ...
+24: doWithOneRestart(return(expr), restart)
+23: withOneRestart(expr, restarts[[1L]])
+22: withRestarts({
+        .Internal(.signalCondition(simpleWarning(msg, call), msg, 
+            call))
+        .Internal(.dfltWarn(msg, call))
+    }, muffleWarning = function() NULL)
+21: .signalSimpleWarning("nielokalne przypisanie do nazw nie-pól (prawdopodobne literówki?)\n    buffer <<- c(buffer, vector(\"list\", capacity)); buffer[[length]] <<- val; capacity <<- capacity * 2; length <<- length + 1\n( w metodzie \"expanding_list\" klasy \"Projection\")", 
+        base::quote(.checkFieldsInMethod(def, fieldNames, allMethods)))
+20: warning(gettextf("non-local assignment to non-field names (possibly misspelled?)\n    %s\n( in method %s for class %s)", 
+        paste(unlist(assigned$globals)[globalsNotFields], collapse = "; "), 
+        methodName, className), domain = NA)
+19: .checkFieldsInMethod(def, fieldNames, allMethods)
+18: insertClassMethods(allMethods, className, methodDefs, names(def@fieldClasses), 
+        FALSE)
+17: projection_object$methods(list(expanding_list = function(capacity = 10) {
+        buffer <- vector("list", capacity)
+        length <- 0
+        methods <- list()
+        methods$double.size <- function() {
+            buffer <<- c(buffer, vector("list", capacity))
+            capacity <<- capacity * 2
+        }
+        methods$add <- function(val) {
+            if (length == capacity) {
+                methods$double.size()
+            }
+            length <<- length + 1
+            buffer[[length]] <<- val
+        }
+        methods$as.list <- function() {
+            b <- buffer[0:length]
+            return(b)
+        }
+        methods
+      ...
+16: eval(expr, envir)
+15: eval(expr, envir)
+14: source_one(file, encoding, envir = envir)
+13: withCallingHandlers(expr, condition = function(cnd) {
+        {
+            .__handler_frame__. <- TRUE
+            .__setup_frame__. <- frame
+            if (inherits(cnd, "message")) {
+                except <- c("warning", "error")
+            }
+            else if (inherits(cnd, "warning")) {
+                except <- "error"
+            }
+            else {
+                except <- ""
+            }
+        }
+        while (!is_null(cnd)) {
+            if (inherits(cnd, "error")) {
+                out <- handlers[[1L]](cnd)
+                if (!inherits(out, "rlang_zap")) 
+                    throw(out)
+            }
+      ...
+12: doTryCatch(return(expr), name, parentenv, handler)
+11: tryCatchOne(expr, names, parentenv, handlers[[1L]])
+10: tryCatchList(expr, classes, parentenv, handlers)
+9: tryCatch(withCallingHandlers(expr, condition = function(cnd) {
+       {
+           .__handler_frame__. <- TRUE
+           .__setup_frame__. <- frame
+           if (inherits(cnd, "message")) {
+               except <- c("warning", "error")
+           }
+           else if (inherits(cnd, "warning")) {
+               except <- "error"
+           }
+           else {
+               except <- ""
+           }
+       }
+       while (!is_null(cnd)) {
+           if (inherits(cnd, "error")) {
+               out <- handlers[[1L]](cnd)
+               if (!inherits(out, "rlang_zap")) 
+                   throw(out)
+           }
+     ...
+8: try_fetch(source_one(file, encoding, envir = envir), error = function(cnd) handle_source_error(cnd, 
+       file))
+7: source_many(paths, encoding, env)
+6: force(code)
+5: withr_with_dir(path, source_many(paths, encoding, env))
+4: load_code(path, quiet = quiet)
+3: pkgload::load_all(path, helpers = FALSE, attach_testthat = FALSE)
+2: load_code(base_path)
+1: roxygen2::roxygenize()
+
+NOTE: Log Print Time:  2025-07-22 16:50:52
+NOTE: Elapsed Time: 14.4963619709015 secs
+
+=========================================================================
+Log End Time: 2025-07-22 16:50:52
+Log Elapsed Time: 0 00:00:14
+=========================================================================
