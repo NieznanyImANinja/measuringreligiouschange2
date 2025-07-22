@@ -29,7 +29,7 @@ projection_object$methods(
 
   project = function(migration = TRUE, steps = 1, switching = TRUE, switching_type = 1, no_diff = FALSE) {
     # Progress bar for calculations
-    if(!requireNamespace("progress", quietly = TRUE)){
+    if(!require("progress")){
       stop(stop(
         "Package \"progress\" must be installed to use this function.",
         call. = FALSE
