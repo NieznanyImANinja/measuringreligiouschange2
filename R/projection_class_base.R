@@ -26,18 +26,26 @@ projection_object <- setRefClass(
   )
 )
 
+
+#' @exportClass projection_object
 projection_object$methods(
   list(
 
   project = function(migration = TRUE, steps = 1, switching = TRUE, switching_type = 1, no_diff = FALSE) {
     # Progress bar for calculations
+    if(!requireNamespace("progress", quietly = TRUE)){
+      stop(stop(
+        "Package \"progress\" must be installed to use this function.",
+        call. = FALSE
+      ))
+    }
     if (migration) {
-      pb <- progress_bar$new(
+      pb <- progress::progress_bar$new(
         format = paste("Projection of ", as.character(steps), " steps [:bar] :percent Estimated time left: :eta", sep = ""),
         total = steps * length(country_object_list) * 5, clear = FALSE, width = 120
       )
     } else {
-      pb <- progress_bar$new(
+      pb <- progress::progress_bar$new(
         format = paste("Projection of ", as.character(steps), " kroków [:bar] :percent Estimated time left: :eta", sep = ""),
         total = steps * length(country_object_list), clear = FALSE, width = 120
       )

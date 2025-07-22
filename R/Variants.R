@@ -115,6 +115,7 @@ convergence = function(fdlist, steps = 0, object_year) {
 #  object$fertility_factorization <- fert_fact
 #}
 
+#' @export variants_loader
 variants_loader <- function(object_list, directory_name, file_name) {
   country_info <- read_excel(paste(directory_name, "/",
                                    file_name, sep = ""))

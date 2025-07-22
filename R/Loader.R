@@ -334,7 +334,7 @@ object_list_creator <- function(start_year = 2010,
 }
 
 
-
+#' @export full_list
 full_list <- function(start_year = 2010,
                       start_period = "2010-2015",
                       start_fertility_group = 4,
