@@ -1,0 +1,34 @@
+Package: measuringreligiouschange2
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Jane", "Doe",
+      email = "jane@example.com",
+      role = c("aut", "cre")
+    )
+  )
+Description: More about what it does (maybe more than one line).
+    Continuation lines should be indented.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Imports:
+    tidyverse,
+    logr,
+    openxlsx,
+    progress
+RoxygenNote: 7.3.2
+Collate: 
+    'Data_adjustment.R'
+    'class_base.R'
+    'class_utilities.R'
+    'class_migration.R'
+    'class_projection.R'
+    'class_plots.R'
+    'projection_class_base.R'
+    'projection_class_saving.R'
+    'projection_class_plots.R'
+    'Loader.R'
+    'Variants.R'
