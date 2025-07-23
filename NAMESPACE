@@ -2,6 +2,9 @@
 
 export(create_country_list)
 export(create_projection_object)
+export(data_loader)
+export(object_list_creator)
+export(object_loader)
 export(variants_loader)
 import(dplyr)
 import(logr)

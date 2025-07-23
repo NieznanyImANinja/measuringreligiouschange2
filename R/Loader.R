@@ -4,8 +4,6 @@
 
 dist_list <- list(c(0.2,0.1,0.1,0.1,0.1,0.1,0.1,0.2), c(0.2,0.1,0.1,0.1,0.1,0.1,0.1,0.2))
 
-directory <- "data-raw/INPUT_TEST"
-
 country_info_name <- "country_codes_fix.xlsx"
 structure_data_name <- "structure_data_fix.xlsx"
 asfr_data_name <- "asfr_fix.xlsx"
@@ -119,7 +117,7 @@ migration_rates_data_adjustment <- function(directory_name, file_name) {
                                            file_name, sep = ""))
   return(migration_rates_data)
 }
-
+#' @export data_loader
 data_loader <- function(directory_name, files_names) {
   country_info <- country_info_adjustment(directory_name, files_names[[1]])
   structure_data <- structure_data_adjustment(directory_name, files_names[[2]])
@@ -192,6 +190,7 @@ error_check <- function(object) {
 
 #Functions for creating objects
 
+#' @export object_loader
 object_loader <- function(code,
                           start_year = 2010,
                           start_period = "2010-2015",
@@ -284,7 +283,7 @@ object_loader <- function(code,
 }
 
 
-
+#' @export object_list_creator
 object_list_creator <- function(start_year = 2010,
                                 start_period = "2010-2015",
                                 start_fertility_group = 4,
@@ -331,9 +330,16 @@ create_country_list <- function(start_year = 2010,
                       start_fertility_group = 4,
                       post_switch = TRUE,
                       distribution_list = dist_list,
-                      directory_name = directory,
-                      files_names = files) {
-  data_list <- data_loader(directory, files)
+                      directory_name = NA,
+                      files_names = NA,
+                      data_list = data_list) {
+  if(!is.na(directory_name) & !is.na(files_names)){
+    data_list <- data_loader(directory, files)
+  }
+  if(!exists("data_list")){
+    logr:log_print("No data required for object creation!")
+    return(NULL)
+  }
   full_country_list <- object_list_creator(start_year,
                                              paste(
                                                as.character(start_year),
