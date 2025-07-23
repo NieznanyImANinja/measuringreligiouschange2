@@ -299,7 +299,7 @@ object_list_creator <- function(start_year = 2010,
                                 destination_data,
                                 migration_rates_data) {
   country_object_list <- list()
-  for (country_code in unique(country_info[[2]])) {
+  for (country_code in country_info[[2]]) {
     object <- object_loader(country_code,
                             start_year,
                             start_period,
