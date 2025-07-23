@@ -332,7 +332,7 @@ create_country_list <- function(start_year = 2010,
                       distribution_list = dist_list,
                       directory_name = NA,
                       files_names = NA,
-                      data_list = data_list) {
+                      data_list = base_data_list) {
   if(!is.na(directory_name) & !is.na(files_names)){
     data_list <- data_loader(directory, files)
   }
